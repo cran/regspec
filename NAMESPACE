@@ -1,0 +1,6 @@
+export(basis, Gaussbound, hindcast, logspec2cov, regspec)
+importFrom("grDevices", "rgb")
+importFrom("graphics", "axis", "mtext", "par", "plot", "points",
+     "polygon")
+importFrom("stats", "dist", "fft", "integrate")
+importFrom("utils", "setTxtProgressBar", "txtProgressBar")

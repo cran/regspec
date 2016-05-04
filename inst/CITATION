@@ -1,0 +1,25 @@
+citHeader("To cite the 'regspec' package in publications use:")
+
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype="Manual",
+         title = "Non-parametric Bayesian Spectrum Estimation for Multirate Data",
+         author = c(person("Ben", "Powell"),
+		person("Guy", "Nason"),
+		person("Duncan", "Elliott"),
+		person("Paul", "Smith")),
+         year = year,
+         note = note,
+	 url="https://CRAN.R-project.org/package=regspec")
+
+
+bibentry(bibtype="Article",
+         title = "Should we sample a time series more frequently? Decision support via multirate spectrum estimation",
+         author = personList(c(as.person("G. P. Nason"),as.person("B. Powell"),
+		as.person("D. Elliott"), as.person("P. Smith"))),
+	 journal = "Journal of the Royal Statistical Society, Series A",
+	volume=179,
+         year     = "2016",
+	pages="XXX--XXX",
+         url      = "http://www.stats.bris.ac.uk/~guy")
