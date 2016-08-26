@@ -1,11 +1,11 @@
-caa5af232416534f666ad5efabafc2a5 *DESCRIPTION
+f20841255171e2e083829f1236a1091c *DESCRIPTION
 73c5fa012b0085581a2d87807b4e04db *NAMESPACE
 edfc7f070cc4e4cb890c0534042245fe *R/Gaussbound.R
 a2a5d9fb49a0799d3faf2f5292b499e8 *R/SARIMAspec.R
 a76032eed158415ffa8a2641d80160df *R/basis2.R
 e0e7d12250b412c4ffc0db03a06a3d58 *R/hindcast.R
 02f0f18c9c0bdf6ea7e6d9a957524b89 *R/logspec2cov.R
-27fbe22e1932b45666c35abd7743539c *R/regspec15.R
+7fca3dc77a8676e92fd733b7e5dc1bf3 *R/regspec17.R
 6b095c47239d44bf71476bea1f815a74 *data/Dfexample.rda
 db44d64bc1f29691503e323923b04b77 *data/Dpexample2.rda
 298ff2d53b6db9a628392e11ea066d7b *data/Dpexample3.rda
@@ -19,6 +19,6 @@ f30b20e6128505801389051410854cb1 *man/Gaussbound.Rd
 a1e9df28a2b0a61249b7fa6296835155 *man/hindcast.Rd
 d85f89e52fedce6586f370337664864a *man/logspec2cov.Rd
 d58146321d4c230d059af7c9dc57a1aa *man/regspec-package.Rd
-ee3abee4bef6165399c05727b46bbd34 *man/regspec.Rd
+8e94eed9b8cf2481033de4423866bc8e *man/regspec.Rd
 f05559f78b711e6ff68c3db75f7ad01e *man/retail.Rd
 f908939eaa891fee19b9c450f89e3cf0 *man/travel.Rd

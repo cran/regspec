@@ -1,17 +1,16 @@
 regspec<-function(D,deltat=1,nb=100,varmult=2,smthpar=0.8,ebeta=NULL,
 	vbeta=NULL,filter=NULL, freq.out=seq(0,0.5,length=200),
 	plot.spec=TRUE, plot.log=FALSE, plot.pgram=FALSE,
-	plot.intervals=TRUE, ylim=NULL, 
+	plot.intervals=TRUE, ylim=NULL,
 	SARIMA=list(sigma2=1),centred=FALSE,intname=NULL,
-	xlab="Frequency", ylab="Spectrum", ...){
+	...){
 
 #
 # Check length of data in "starting" case
 #
 nD<-length(D)
-
-if (is.null(ebeta) && is.null(vbeta) & nD < 2)
-	stop("With no prior data, length of series has be greater than 2")
+# if (is.null(ebeta) && is.null(vbeta) & nD < 2)
+# 	stop("With no prior data, length of series has be greater than 2")
 
 if(is.null(ebeta)){ebeta<-rep(0,nb)}
 
@@ -52,15 +51,12 @@ sgain[,i]<-(Mod(filter%*%expons))^2}
 # iterate linearization
 b0<-ebeta
 pbeta<-solve(vbeta)
-alphas<-rep(1,nw)
 
-
-#for(linit in 1:30){
+for(linit in 1:4){
 
 f0<-wall
 for(i in 1:ncol(wall)){f0[,i]<-exp(basis(wall[,i],nb)%*%b0)}
 f0<-f0*matrix(SARIMAspec(SARIMA,freq=c(wall))$spec,nrow(f0),ncol(f0))*sgain
-
 s0<-rowSums(f0)
 B<-matrix(0,nw,nb)
 for(i in 1:ncol(wall)){B<-B+sweep(basis(wall[,i],nb),1,f0[,i]/s0,FUN="*")}
@@ -74,17 +70,17 @@ if(centred==TRUE){verr[1]<-999;logI[1]<-0}
 V<-B%*%vbeta%*%t(B)+diag(verr)
 Vinv<-solve(V)
 C<-vbeta%*%t(B)
-ebeta<-ebeta+C%*%Vinv%*%(logI-log(s0)-eerr)
-vbeta<-vbeta-C%*%Vinv%*%t(C)
+b0<-ebeta+C%*%Vinv%*%(logI-(log(s0)+B%*%(ebeta-b0)+eerr))
 
-#}
+}
+
+ebeta<-b0
+vbeta<-vbeta-C%*%Vinv%*%t(C)
 
 B<-basis(freq.out,nb)
 g0<-log(SARIMAspec(SARIMA,freq=freq.out)$spec)
 gmean<-B%*%ebeta+g0
 gvar<-colSums(t(B)*vbeta%*%t(B))
-
-vareig<-eigen(vbeta)
 
 specmean<-exp(gmean+0.5*gvar)
 
@@ -104,12 +100,12 @@ if(plot.spec==TRUE){
     if(is.null(ylim)){ylim<-range(interval90)}
 
     par(mfcol=c(1,1),oma=c(3,0,0,0))
-    plot(NA,NA,type="l",col=rgb(0.2,0.5,0.7),lwd=2,ylim=ylim,xlab=xlab,
-	ylab=ylab, xlim=c(0,0.5),xaxp=c(0,0.5,5), ...)
-    mtext("frequency",side=1,line=2,cex=par()$cex)
+    plot(NA,NA,type="l",col=rgb(0.2,0.5,0.7),lwd=2,ylim=ylim,xlab="",
+	ylab="Spectal density",xlim=c(0,0.5),xaxp=c(0,0.5,5), ...)
+    mtext("Frequency",side=1,line=2,cex=par()$cex)
     axfreq<-round(seq(0,0.5,length=6),1)
     axis(1,line=4,at=axfreq,labels=paste(round(axfreq^-1,1)))
-    mtext(paste("wavelength",intname,sep=","),side=1,line=6,cex=par()$cex)
+    mtext(paste("Wavelength",intname),side=1,line=6,cex=par()$cex)
 
     if(plot.intervals==TRUE){
       polygon(c(freq.out,rev(freq.out)),c(interval90[,1],rev(interval90[,2])),col=rgb(.2^.2,.5^.2,.7^.2),border=NA)
@@ -125,12 +121,12 @@ if(plot.log==FALSE){
   if(is.null(ylim)){ylim<-range(exp(interval90))}
   par(mfcol=c(1,1),oma=c(3,0,0,0))
   plot(NA,NA,type="l",col=rgb(0.2,0.5,0.7),lwd=2,ylim=ylim,xlim=c(0,0.5),
-	xlab=xlab,ylab=ylab,xaxp=c(0,0.5,5), ...)
-  mtext("frequency",side=1,line=1,cex=par()$cex)
+	xlab="",ylab="Log-spectrum",xaxp=c(0,0.5,5), ...)
+  mtext("Frequency",side=1,line=1,cex=par()$cex)
   axfreq<-round(seq(0,0.5,length=6),1)
   axis(1,line=4,at=axfreq,labels=paste(round(axfreq^-1,1)))
   #mtext("wavelength",side=1,line=5,cex=par()$cex)
-  mtext(paste("wavelength",intname,sep=","),side=1,line=5,cex=par()$cex)
+  mtext(paste("Wavelength",intname),side=1,line=5,cex=par()$cex)
 
   if(plot.intervals==TRUE){
     polygon(c(freq.out,rev(freq.out)),exp(c(interval90[,1],rev(interval90[,2]))),col=rgb(.2^.2,.5^.2,.7^.2),border=NA)

@@ -21,8 +21,7 @@ regspec(D, deltat=1, nb=100, varmult=2, smthpar=0.8, ebeta=NULL,
 	vbeta=NULL, filter=NULL, freq.out=seq(0,0.5,length=200),
 	plot.spec=TRUE, plot.log=FALSE, plot.pgram=FALSE,
 	plot.intervals=TRUE, ylim=NULL, SARIMA=list(sigma2=1),
-	centred=FALSE,intname=NULL, xlab="Frequency",
-	ylab="Spectrum", ...)
+	centred=FALSE,intname=NULL,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -55,14 +54,12 @@ regspec(D, deltat=1, nb=100, varmult=2, smthpar=0.8, ebeta=NULL,
 	return infinite values. By setting this option to TRUE,
 	the infinite log-periodogram value is ignored.}
 \item{intname}{Character. A name for the units the time intervals are measured in. This is just used to label the axes.}
-\item{xlab}{Label for the x-axis}
-\item{ylab}{Label for the y-axis}
 \item{...}{Other arguments for call to plot}
 }
 
 \details{Full technical details of the calculations preformed by
 	\code{regspec} are documented in Nason, Powell, Elliott and Smith (2016)
-	listed in the references. 
+	listed in the references.
 
 	This function can be used to produce an estimate of the spectrum
 	of a stationary time series realization using linear Bayes
@@ -108,7 +105,7 @@ regspec(D, deltat=1, nb=100, varmult=2, smthpar=0.8, ebeta=NULL,
 	has been filtered. For example, if one observes quarterly totals,
 	where each total is the result of summing over consecutive three
 	month periods then the filter is \code{c(1,1,1)}.
-	 
+
 
 A plot of the estimated spectrum is produced automatically unless the argument \code{plot.spec} is set to \code{FALSE}.
 }
@@ -131,7 +128,7 @@ Ben Powell code. Ben Powell and Guy Nason on help.
 }
 
 \references{
-Nason, G.P., Powell, B., Elliott, D. and Smith, P. (2016) 
+Nason, G.P., Powell, B., Elliott, D. and Smith, P. (2016)
 	Should We Sample a Time Series More Frequently? Decision Support
 	via Multirate Spectrum Estimation.
 	Journal of the Royal Statistical Society, Series A., 179,
