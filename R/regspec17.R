@@ -101,7 +101,7 @@ if(plot.spec==TRUE){
 
     par(mfcol=c(1,1),oma=c(3,0,0,0))
     plot(NA,NA,type="l",col=rgb(0.2,0.5,0.7),lwd=2,ylim=ylim,xlab="",
-	ylab="Spectal density",xlim=c(0,0.5),xaxp=c(0,0.5,5), ...)
+	ylab="Log-spectrum",xlim=c(0,0.5),xaxp=c(0,0.5,5), ...)
     mtext("Frequency",side=1,line=2,cex=par()$cex)
     axfreq<-round(seq(0,0.5,length=6),1)
     axis(1,line=4,at=axfreq,labels=paste(round(axfreq^-1,1)))
@@ -121,7 +121,7 @@ if(plot.log==FALSE){
   if(is.null(ylim)){ylim<-range(exp(interval90))}
   par(mfcol=c(1,1),oma=c(3,0,0,0))
   plot(NA,NA,type="l",col=rgb(0.2,0.5,0.7),lwd=2,ylim=ylim,xlim=c(0,0.5),
-	xlab="",ylab="Log-spectrum",xaxp=c(0,0.5,5), ...)
+	xlab="",ylab="Spectral density",xaxp=c(0,0.5,5), ...)
   mtext("Frequency",side=1,line=1,cex=par()$cex)
   axfreq<-round(seq(0,0.5,length=6),1)
   axis(1,line=4,at=axfreq,labels=paste(round(axfreq^-1,1)))
