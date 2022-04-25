@@ -12,7 +12,7 @@ and monthly figures from 2011 to 2013.
 They both show the number of UK residents making visits abroad.
 }
 \details{
-The data have been collected by the U.K.'s Office of National Statisitics and are contained in the reference tables: \emph{Overseas Travel And Tourism, Q3 2013} and \emph{Monthly Overseas Travel and Tourism, April 2014}. At the time of writing these tables are accessible at \url{http://www.ons.gov.uk/ons/taxonomy/index.html?nscl=Travel+and+Transport#tab-data-tables}.
+The data have been collected by the U.K.'s Office of National Statisitics (ONS) and are contained in the reference tables: \emph{Overseas Travel And Tourism, Q3 2013} and \emph{Monthly Overseas Travel and Tourism, April 2014}. The original data files are no longer hosted on the main ONS webpages but, for the foreseeable future, ought to be accessible via the UK's National Archives \url{https://webarchive.nationalarchives.gov.uk/ukgwa/20160105160709/http://www.ons.gov.uk/ons/index.html}.
 }
 \examples{
 #

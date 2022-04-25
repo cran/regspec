@@ -27,7 +27,7 @@ Gaussbound(mode, tau, prob)
   }
   }
 \value{
-  \item{ }{An ordered vector containing the lower and upper bounds of the interval.}
+  \item{bounds}{An ordered vector containing the lower and upper bounds of the interval.}
   }
 \author{
   Ben Powell
@@ -39,4 +39,4 @@ Pukelsheim, F. (1994) The Three Sigma Rule. \emph{The American Statistician}
 \examples{
 Gaussbound(1,1,0.9)
 }
-    
+

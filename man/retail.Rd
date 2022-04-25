@@ -11,13 +11,10 @@ of a retail sales index, a figure describing the turnover of retail
 businesses as a percentage of a 2010 baseline.
 }
 \details{
-At the time of writing the data is available,
-alongside supporting documents,
-at
-\url{http://www.ons.gov.uk/ons/site-information/using-the-website/time-series/index.html}. The series ID is J468.
+The original data files are no longer hosted on the main ONS webpages but, for the foreseeable future, ought to be accessible via the UK's National Archives \url{https://webarchive.nationalarchives.gov.uk/ukgwa/20160105160709/http://www.ons.gov.uk/ons/index.html}.
 }
 \references{
-Nason, G.P., Powell, B., Elliott, D. and Smith, P. (2016) 
+Nason, G.P., Powell, B., Elliott, D. and Smith, P. (2016)
 	Should We Sample a Time Series More Frequently? Decision Support
 	via Multirate Spectrum Estimation.
 	Journal of the Royal Statistical Society, Series A., 179,

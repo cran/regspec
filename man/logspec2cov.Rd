@@ -38,7 +38,7 @@ Integer. This number is passed to the numerical integrator that computes the aut
 }
 }
 \value{
-\item{}{A vector of approximate expectations for the process's
+\item{autocovariances}{A vector of approximate expectations for the process's
 autocovariances for increasing lags, starting with zero lag
 (the process variance).}
 }
