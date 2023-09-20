@@ -12,15 +12,8 @@ Non-parametric multirate spectral density estimation via linear Bayes.
 	values).
 }
 \details{
-\tabular{ll}{
-Package: \tab regspec\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-04-22\cr
-License: \tab MIT\cr
-}
 Currently, the package's centrepiece is the function \code{\link{regspec}}, which implements spectral density estimation from time series data at integer time points.
-A novel element of the code is it's ability to assimilate subsampled and filter data.
+A novel element of the code is it's ability to assimilate subsampled and filtered data.
 
 The package's data files, which will be loaded automatically, include synthetic and real examples of time series data that feature in the \code{Examples} sections of the functions' help files.
 }

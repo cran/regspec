@@ -1,8 +1,8 @@
 Package: regspec
 Type: Package
 Title: Non-Parametric Bayesian Spectrum Estimation for Multirate Data
-Version: 2.6
-Date: 2022-06-01
+Version: 2.7
+Date: 2023-09-20
 Authors@R: c(person("Ben", "Powell", role=c("aut", "cre"),
         email="ben.powell@york.ac.uk"),
         person("Guy", "Nason", role=c("aut"),
@@ -12,9 +12,9 @@ URL: https://doi.org/10.1111/rssa.12210
 License: GPL-2
 LazyData: TRUE
 NeedsCompilation: no
-Packaged: 2022-06-01 10:36:27 UTC; ben
+Packaged: 2023-09-20 11:56:04 UTC; ben
 Author: Ben Powell [aut, cre],
   Guy Nason [aut]
 Maintainer: Ben Powell <ben.powell@york.ac.uk>
 Repository: CRAN
-Date/Publication: 2022-06-01 11:50:02 UTC
+Date/Publication: 2023-09-20 12:20:02 UTC

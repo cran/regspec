@@ -16,10 +16,10 @@ bibentry(bibtype="Manual",
 
 bibentry(bibtype="Article",
          title = "Should we sample a time series more frequently? Decision support via multirate spectrum estimation",
-         author = personList(c(as.person("G. P. Nason"),as.person("B. Powell"),
-		as.person("D. Elliott"), as.person("P. Smith"))),
+         author = c(as.person("G. P. Nason"),as.person("B. Powell"),
+		as.person("D. Elliott"), as.person("P. Smith")),
 	 journal = "Journal of the Royal Statistical Society, Series A",
-	volume=179,
-         year     = "2016",
-	pages="XXX--XXX",
-         url      = "http://www.stats.bris.ac.uk/~guy")
+	volume=180,
+         year     = "2017",
+	pages="353--407",
+         url      = "https://academic.oup.com/jrsssa/article/180/2/353/7068239")
